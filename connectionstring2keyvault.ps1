@@ -44,16 +44,7 @@ try
         -ErrorAction Ignore
     if(-not $KeyVault)
     {
-        Write-Output "Key Vault does not exist. Creating with params: { "
-        Write-Output "ResourceGroupName: $KeyVaultResourceGroupName, "
-        Write-Output "KeyVaultName: $KeyVaultName, "
-        Write-Output "Location: $Location }"
-        $KeyVault=New-AzureRmKeyVault `
-            -VaultName $KeyVaultName `
-            -ResourceGroupName $KeyVaultResourceGroupName `
-            -EnabledForDeployment `
-            -Location $Location
-        Write-Output "Created: $KeyVaultResourceGroupName/$KeyVaultName"
+        Write-Output "Key Vault doesn't exist but we're continuing anyway to see what happens"
     }
     else {
         Write-Output "Key Vault already exists"
